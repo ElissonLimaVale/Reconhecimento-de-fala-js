@@ -21,8 +21,7 @@ const startFala = document.getElementById('start');
 const textout = document.getElementById('textOutput');
 
 // SETANDO ICONE
-document.getElementById("icone").href = 
-window.location.href + "images/lapis.png";
+document.getElementById("icone").href = window.location.href + "images/lapis.png";
 
 //  - INICIA A AUDIÇÃO DO MICROFONE
 function start(value) {
