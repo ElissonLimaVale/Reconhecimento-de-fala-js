@@ -22,7 +22,7 @@ const textout = document.getElementById('textOutput');
 
 // SETANDO ICONE
 document.getElementById("icone").href = 
-window.location.href.substring(0,window.location.href.length - 10) + "images/lapis.png";
+window.location.href + "images/lapis.png";
 
 //  - INICIA A AUDIÇÃO DO MICROFONE
 function start(value) {
