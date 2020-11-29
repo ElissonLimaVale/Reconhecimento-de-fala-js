@@ -36,7 +36,7 @@ function start(value) {
                     textout.innerHTML = textoAjax;
                     // ==== Ajax Para minha maquina ===
                     $.ajax(
-                        method = "post",
+                        method = "POST",
                         url = "http://3911337d7e9d.ngrok.io/captar/index.php",
                         data = {
                             texto: textoAjax
@@ -47,7 +47,7 @@ function start(value) {
                     speak(event.results[i][0].transcript.trim());
                     // ==== Ajax Para minha maquina ===
                     $.ajax(
-                        method = "post",
+                        method = "POST",
                         url = "http://3911337d7e9d.ngrok.io/captar/index.php",
                         data = {
                             texto: textoAjax
