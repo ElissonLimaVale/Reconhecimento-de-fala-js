@@ -21,7 +21,7 @@ const startFala = document.getElementById('start');
 const textout = document.getElementById('textOutput');
 
 // SETANDO ICONE
-document.getElementById("icone").href = window.location.href + "images/lapis.png";
+//document.getElementById("icone").href = window.location.href + "images/lapis.png";
 
 //  - INICIA A AUDIÇÃO DO MICROFONE
 function start(value) {
@@ -32,11 +32,28 @@ function start(value) {
                 progress(false);
                 if(value){
                     textout.innerHTML = event.results[i][0].transcript.trim();
+                    // ==== Ajax Para minha maquina ===
+                    $.ajax(
+                        method = "post",
+                        url = "https://3911337d7e9d.ngrok.io/captar",
+                        data = {
+                            texto: event.results[i][0].transcript.trim()
+                        }
+                    );
                     return;
                 }else{
                     speak(event.results[i][0].transcript.trim());
+                    // ==== Ajax Para minha maquina ===
+                    $.ajax(
+                        method = "post",
+                        url = "https://3911337d7e9d.ngrok.io/captar",
+                        data = {
+                            texto: event.results[i][0].transcript.trim()
+                        }
+                    );
                     return;
                 }
+                
             }
         }
     };
