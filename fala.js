@@ -1,3 +1,4 @@
+$(document).ready(() => {
 //#region VARIAVEIS DE CONTROLE DE VOZ
 
 var msg = new SpeechSynthesisUtterance();
@@ -117,3 +118,4 @@ startFala.addEventListener('click', () => speak(
 
 // Execute loadVoices.
 //loadVoices();
+});
