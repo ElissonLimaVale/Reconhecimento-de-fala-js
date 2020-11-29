@@ -42,7 +42,7 @@ function start(value) {
 function speak(text) {
     if(text == ""){
         document.getElementById("status").style = "color: rgb(154, 50, 50);";
-        document.getElementById("status").value = "Preêncha o campos de texto acima!";
+        document.getElementById("status").value = "Preêncha o campo de texto acima!";
     }else{
         document.getElementById("status").style = "color: rgb(50, 200, 50);";
         document.getElementById("status").value = "Falando...";
