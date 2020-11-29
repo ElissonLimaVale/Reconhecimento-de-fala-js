@@ -20,6 +20,10 @@ const startEscreve = document.getElementById('startout');
 const startFala = document.getElementById('start');
 const textout = document.getElementById('textOutput');
 
+// SETANDO ICONE
+document.getElementById("icone").href = 
+window.location.href.substring(0,window.location.href.length - 10) + "images/lapis.png";
+
 //  - INICIA A AUDIÇÃO DO MICROFONE
 function start(value) {
     progress(true);
