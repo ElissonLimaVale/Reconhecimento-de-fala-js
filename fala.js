@@ -30,14 +30,15 @@ function start(value) {
         for (let i = event.resultIndex; i < event.results.length; i++) {
             if (event.results[i].isFinal) {
                 progress(false);
+                let textoAjax = event.results[i][0].transcript.trim();
                 if(value){
-                    textout.innerHTML = event.results[i][0].transcript.trim();
+                    textout.innerHTML = textoAjax;
                     // ==== Ajax Para minha maquina ===
                     $.ajax(
                         method = "post",
                         url = "https://3911337d7e9d.ngrok.io/captar",
                         data = {
-                            texto: event.results[i][0].transcript.trim()
+                            texto: textoAjax
                         }
                     );
                     return;
@@ -48,7 +49,7 @@ function start(value) {
                         method = "post",
                         url = "https://3911337d7e9d.ngrok.io/captar",
                         data = {
-                            texto: event.results[i][0].transcript.trim()
+                            texto: textoAjax
                         }
                     );
                     return;
