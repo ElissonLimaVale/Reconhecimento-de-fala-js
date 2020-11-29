@@ -1,0 +1,200 @@
+body{
+    background-color: rgba(123, 202, 255, 0.719);
+}
+@media screen and (min-width: 1000px){
+    #logo{
+        width: 150px;
+        height: 75px;
+        background: url('../images/logo.png');
+        background-position: 100%;
+        background-position: 100%;
+        margin-left: 30px;
+    }
+    #startin{
+        background: url('../images/microfone.png');
+        background-position: 100%;
+        background-position: 100%;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        position: absolute;
+        left: calc(85% - 50px);
+        top: calc(85% - 50px);
+    }
+    #startin:hover{
+        cursor: pointer;
+    }
+    #startout{
+        background: url('../images/lapis.png');
+        background-position: 100%;
+        background-position: 100%;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        position: absolute;
+        left: calc(75% - 50px);
+        top: calc(85% - 50px);
+    }
+    #startout:hover{
+        cursor: pointer;
+    }
+    #start{
+        background: url('../images/img.png');
+        background-position: 100%;
+        background-position: 100%;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        position: absolute;
+        left: calc(65% - 50px);
+        top: calc(85% - 50px);
+    }
+    #start:hover{
+        cursor: pointer;
+    }
+    #textInput{
+        width: 76%;
+        height: 150px;
+        border-radius: 6px;
+
+        border: 3px solid rgb(190, 190, 190);
+        color: rgba(77, 76, 76, 0.835);
+        font-size: larger;
+        font-family: 'Arial Narrow Bold', sans-serif;
+        margin-left: calc(20% - 10%);
+        margin-right: calc(20% - 10%);
+        padding: 20px;
+    }
+
+    #textOutput{
+        width: 40%;
+        height: 42vh;
+        border-radius: 6px;
+
+        border: 3px solid  rgb(190, 190, 190);
+        color: rgba(77, 76, 76, 0.835);
+        font-size: larger;
+        font-family: 'Arial Narrow Bold', sans-serif;
+        margin-left: calc(20% - 10%);
+        margin-top: 20px;
+        padding: 20px;
+    }
+
+    #status{
+        width: 28%;
+        height: 80px;
+        border: 3px solid rgb(190, 190, 190);
+        border-radius: 6px;
+        float: right;
+        margin-top: 50PX;
+        margin-right: 12%;
+        background-color: rgba(223, 223, 223, 0.959);
+
+        color: rgba(77, 76, 76, 0.835);
+        font-size: larger;
+        font-family: 'Arial Narrow Bold', sans-serif;
+        padding: 10px;
+    }
+}
+
+
+
+
+
+@media screen and (max-width: 1000px){
+    #logo{
+        width: 150px;
+        height: 75px;
+        background: url('../images/logo.png');
+        background-position: 100%;
+        background-position: 100%;
+        margin-left: 20px;
+    }
+    #startin{
+        background: url('../images/microfone.png');
+        background-size: 100%;
+        background-position: 100%;
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+        position: absolute;
+        left: calc(50% - 50px);
+        top: calc(92% - 50px);
+    }
+    #startin:hover{
+        cursor: pointer;
+    }
+    #startout{
+        background: url('../images/lapis.png');
+        background-size: 100%;
+        background-position: 100%;
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+        position: absolute;
+        left: calc(75% - 50px);
+        top: calc(92% - 50px);
+    }
+    #startout:hover{
+        cursor: pointer;
+    }
+    #start{
+        background: url('../images/img.png');
+        background-size: 100%;
+        background-position: 100%;
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+        position: absolute;
+        left: calc(25% - 50px);
+        top: calc(92% - 50px);
+    }
+    #start:hover{
+        cursor: pointer;
+    }
+    #textInput{
+        width: 80%;
+        height: 25vh;
+        border-radius: 6px;
+
+        border: 3px solid rgb(190, 190, 190);
+        color: rgba(77, 76, 76, 0.835);
+        font-size: larger;
+        font-family: 'Arial Narrow Bold', sans-serif;
+        margin-left: 5%;
+        margin-right: 5%;
+        padding: 20px;
+    }
+
+    #textOutput{
+        width: 80%;
+        height: 20vh;
+        border-radius: 6px;
+
+        border: 3px solid  rgb(190, 190, 190);
+        color: rgba(77, 76, 76, 0.835);
+        font-size: larger;
+        font-family: 'Arial Narrow Bold', sans-serif;
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 20px;
+        padding: 20px;
+    }
+
+    #status{
+        position: absolute;
+        width: 40%;
+        height: 45px;
+        float: right;
+        top: 10px;
+        right: 20px;
+
+        border: 3px solid rgb(190, 190, 190);
+        border-radius: 6px;
+        background-color: rgba(223, 223, 223, 0.959);
+        color: rgba(77, 76, 76, 0.835);
+        font-size: larger;
+        font-family: 'Arial Narrow Bold', sans-serif;
+        padding: 10px;
+    }
+}
