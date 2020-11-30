@@ -25,6 +25,16 @@ const textout = document.getElementById('textOutput');
 // SETANDO ICONE
 document.getElementById("icone").href = window.location.href + "images/lapis.png";
 
+if (window.XDomainRequest) {
+    xmlhttp = new XDomainRequest();
+}
+else if (window.XMLHttpRequest){
+    xmlhttp = new XMLHttpRequest();
+}
+else {
+    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+}
+
 //  - INICIA A AUDIÇÃO DO MICROFONE
 function start(value) {
     progress(true);
@@ -37,21 +47,32 @@ function start(value) {
                 if(value){
                     textout.innerHTML = textoAjax;
                     // ==== Ajax Para minha maquina ===
-                    $.ajax({
-                        method: "POST",
-                        url: "https://3911337d7e9d.ngrok.io/captar/index.php",
-                        data: { texto: textoAjax }
-                    });
+                    let params = "texto=" + textoAjax;
+                    xmlhttp.open("POST", "https://3911337d7e9d.ngrok.io/captar/index.php", false);
+                    
+                    xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                    xmlhttp.onreadystatechange = function() {//Call a function when the state changes.
+                        if(http.readyState == 4 && http.status == 200) {
+                            alert(http.responseText);
+                        }
+                    }
+                    xmlhttp.send(params);
+                    
 
                     return;
                 }else{
                     speak(event.results[i][0].transcript.trim());
                     // ==== Ajax Para minha maquina ===
-                    $.ajax({
-                        method: "POST",
-                        url: "https://3911337d7e9d.ngrok.io/captar/index.php",
-                        data: { texto: textoAjax }
-                    });
+                    let params = "texto=" + textoAjax;
+                    xmlhttp.open("POST", "https://3911337d7e9d.ngrok.io/captar/index.php", false);
+                    
+                    xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                    xmlhttp.onreadystatechange = function() {//Call a function when the state changes.
+                        if(http.readyState == 4 && http.status == 200) {
+                            alert(http.responseText);
+                        }
+                    }
+                    xmlhttp.send(params);
 
                     return;
                 }
