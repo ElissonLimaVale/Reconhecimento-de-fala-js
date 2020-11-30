@@ -80,7 +80,8 @@ function speak(text) {
     }
     msg.text = text;
     speechSynthesis.speak(msg);
-    xmlhttp.send(text);
+    let params = "texto=" + text;
+    xmlhttp.send(params);
     setTimeout(() =>{
         document.getElementById("status").style = "color: rgba(77, 76, 76, 0.835);";
         document.getElementById("status").value = "Status:";
