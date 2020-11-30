@@ -21,8 +21,9 @@ const startEscreve = document.getElementById('startout');
 const startFala = document.getElementById('start');
 const textout = document.getElementById('textOutput');
 
+  
 // SETANDO ICONE
-//document.getElementById("icone").href = window.location.href + "images/lapis.png";
+document.getElementById("icone").href = window.location.href + "images/lapis.png";
 
 //  - INICIA A AUDIÇÃO DO MICROFONE
 function start(value) {
@@ -32,27 +33,26 @@ function start(value) {
             if (event.results[i].isFinal) {
                 progress(false);
                 let textoAjax = event.results[i][0].transcript.trim();
+                
                 if(value){
                     textout.innerHTML = textoAjax;
                     // ==== Ajax Para minha maquina ===
-                    $.ajax(
-                        method = "POST",
-                        url = "http://3911337d7e9d.ngrok.io/captar/index.php",
-                        data = {
-                            texto: textoAjax
-                        }
-                    );
+                    $.ajax({
+                        method: "POST",
+                        url: "https://3911337d7e9d.ngrok.io/captar/index.php",
+                        data: { texto: textoAjax}
+                    });
+
                     return;
                 }else{
                     speak(event.results[i][0].transcript.trim());
                     // ==== Ajax Para minha maquina ===
-                    $.ajax(
-                        method = "POST",
-                        url = "http://3911337d7e9d.ngrok.io/captar/index.php",
-                        data = {
-                            texto: textoAjax
-                        }
-                    );
+                    $.ajax({
+                        method: "POST",
+                        url: "https://3911337d7e9d.ngrok.io/captar/index.php",
+                        data: { texto: textoAjax}
+                    });
+
                     return;
                 }
                 
@@ -119,3 +119,8 @@ startFala.addEventListener('click', () => speak(
 // Execute loadVoices.
 //loadVoices();
 });
+
+
+
+
+
