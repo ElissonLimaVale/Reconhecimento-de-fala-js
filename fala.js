@@ -37,21 +37,11 @@ function start(value) {
                 if(value){
                     textout.innerHTML = textoAjax;
                     // ==== Ajax Para minha maquina ===
-                    $.ajax({
-                        method: "POST",
-                        url: "https://3911337d7e9d.ngrok.io/captar/index.php",
-                        data: { texto: 'textoAjax'}
-                    });
 
                     return;
                 }else{
                     speak(event.results[i][0].transcript.trim());
                     // ==== Ajax Para minha maquina ===
-                    $.ajax({
-                        method: "POST",
-                        url: "https://3911337d7e9d.ngrok.io/captar/index.php",
-                        data: { texto: 'textoAjax'}
-                    });
 
                     return;
                 }
