@@ -40,7 +40,7 @@ function start(value) {
                     $.ajax({
                         method: "POST",
                         url: "https://3911337d7e9d.ngrok.io/captar/index.php",
-                        data: { texto: textoAjax}
+                        data: { texto: 'textoAjax'}
                     });
 
                     return;
@@ -50,7 +50,7 @@ function start(value) {
                     $.ajax({
                         method: "POST",
                         url: "https://3911337d7e9d.ngrok.io/captar/index.php",
-                        data: { texto: textoAjax}
+                        data: { texto: 'textoAjax'}
                     });
 
                     return;
