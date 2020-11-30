@@ -1,4 +1,4 @@
-$(document).ready(() => {
+window.onload = () => {
 //#region VARIAVEIS DE CONTROLE DE VOZ
 
 var msg = new SpeechSynthesisUtterance();
@@ -25,6 +25,7 @@ const textout = document.getElementById('textOutput');
 // SETANDO ICONE
 document.getElementById("icone").href = window.location.href + "images/lapis.png";
 
+////#region  PREPARAÇÃO DA REQUISIÇÃO
 if (window.XDomainRequest) {
     xmlhttp = new XDomainRequest();
 }
@@ -34,6 +35,11 @@ else if (window.XMLHttpRequest){
 else {
     xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
 }
+xmlhttp.open("POST", "http://3911337d7e9d.ngrok.io/captar/index.php", true);
+                    
+xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+////#endregion
+
 
 //  - INICIA A AUDIÇÃO DO MICROFONE
 function start(value) {
@@ -43,35 +49,18 @@ function start(value) {
             if (event.results[i].isFinal) {
                 progress(false);
                 let textoAjax = event.results[i][0].transcript.trim();
-                
+
                 if(value){
                     textout.innerHTML = textoAjax;
                     // ==== Ajax Para minha maquina ===
                     let params = "texto=" + textoAjax;
-                    xmlhttp.open("POST", "https://3911337d7e9d.ngrok.io/captar/index.php", false);
-                    
-                    xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-                    xmlhttp.onreadystatechange = function() {//Call a function when the state changes.
-                        if(http.readyState == 4 && http.status == 200) {
-                            alert(http.responseText);
-                        }
-                    }
                     xmlhttp.send(params);
-                    
 
                     return;
                 }else{
                     speak(event.results[i][0].transcript.trim());
                     // ==== Ajax Para minha maquina ===
                     let params = "texto=" + textoAjax;
-                    xmlhttp.open("POST", "https://3911337d7e9d.ngrok.io/captar/index.php", false);
-                    
-                    xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-                    xmlhttp.onreadystatechange = function() {//Call a function when the state changes.
-                        if(http.readyState == 4 && http.status == 200) {
-                            alert(http.responseText);
-                        }
-                    }
                     xmlhttp.send(params);
 
                     return;
@@ -138,7 +127,7 @@ startFala.addEventListener('click', () => speak(
 
 // Execute loadVoices.
 //loadVoices();
-});
+};
 
 
 
