@@ -26,18 +26,24 @@ const textout = document.getElementById('textOutput');
 document.getElementById("icone").href = window.location.href + "images/lapis.png";
 
 ////#region  PREPARAÇÃO DA REQUISIÇÃO
-if (window.XDomainRequest) {
-    xmlhttp = new XDomainRequest();
-}
-else if (window.XMLHttpRequest){
+
+if (window.XMLHttpRequest) {
+    // code for modern browsers
     xmlhttp = new XMLHttpRequest();
-}
-else {
+ } else {
+    // code for old IE browsers
     xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
 }
-xmlhttp.open("POST", "https://3a0d4a0c3ecb.ngrok.io/captar/index.php", true);
-                    
-xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      console.log("preparou: "+ xmlhttp.responseText);
+    }
+};
+xmlhttp.open("POST", "https://3a0d4a0c3ecb.ngrok.io/captar/index.php");
+
+xmlhttp.withCredentials = true;
+xmlhttp.setRequestHeader("Content-Type", "application/json");
+
 ////#endregion
 
 
@@ -80,8 +86,10 @@ function speak(text) {
     }
     msg.text = text;
     speechSynthesis.speak(msg);
+
     let params = "texto=" + text;
     xmlhttp.send(params);
+
     setTimeout(() =>{
         document.getElementById("status").style = "color: rgba(77, 76, 76, 0.835);";
         document.getElementById("status").value = "Status:";
