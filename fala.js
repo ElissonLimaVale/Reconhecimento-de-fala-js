@@ -12,7 +12,7 @@ const recognition = new webkitSpeechRecognition();
 recognition.interimResults = true;
 recognition.lang = "pt-br";
 recognition.continuous = true;
-recognition.start();
+
 //#endregion
 
 // BOTÕES DE CONTROLE
@@ -44,6 +44,7 @@ xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 //  - INICIA A AUDIÇÃO DO MICROFONE
 function start(value) {
     progress(true);
+    recognition.start();
     recognition.onresult = function(event) {
         for (let i = event.resultIndex; i < event.results.length; i++) {
             if (event.results[i].isFinal) {
@@ -53,15 +54,15 @@ function start(value) {
                 if(value){
                     textout.innerHTML = textoAjax;
                     // ==== Ajax Para minha maquina ===
-                    let params = "texto=" + textoAjax;
-                    xmlhttp.send(params);
+                    // let params = "texto=" + textoAjax;
+                    // xmlhttp.send(params);
 
                     return;
                 }else{
                     speak(event.results[i][0].transcript.trim());
                     // ==== Ajax Para minha maquina ===
-                    let params = "texto=" + textoAjax;
-                    xmlhttp.send(params);
+                    // let params = "texto=" + textoAjax;
+                    // xmlhttp.send(params);
 
                     return;
                 }
@@ -80,8 +81,8 @@ function speak(text) {
     }
     msg.text = text;
     speechSynthesis.speak(msg);
-    let params = "texto=" + text;
-    xmlhttp.send(params);
+    // let params = "texto=" + text;
+    // xmlhttp.send(params);
     setTimeout(() =>{
         document.getElementById("status").style = "color: rgba(77, 76, 76, 0.835);";
         document.getElementById("status").value = "Status:";
