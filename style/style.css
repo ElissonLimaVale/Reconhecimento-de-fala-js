@@ -1,5 +1,6 @@
 body{
     background-color: rgba(123, 202, 255, 0.719);
+    overflow: hidden;
 }
 @media screen and (min-width: 1000px){
     #logo{
@@ -114,16 +115,17 @@ body{
         background: url('../images/microfone.png');
         background-size: 100%;
         background-position: 100%;
-        width: 65px;
-        height: 65px;
+        margin: 0px;
+        border: none;
+        width: 66px;
+        height: 66px;
         border-radius: 50%;
         position: absolute;
-        left: calc(50% - 50px);
+        left: calc(50% - 33px);
         top: calc(92% - 50px);
-    }
-    #startin:hover{
         cursor: pointer;
     }
+    
     #startout{
         background: url('../images/lapis.png');
         background-size: 100%;
@@ -132,10 +134,8 @@ body{
         height: 65px;
         border-radius: 50%;
         position: absolute;
-        left: calc(75% - 50px);
+        left: 4%;
         top: calc(92% - 50px);
-    }
-    #startout:hover{
         cursor: pointer;
     }
     #start{
@@ -146,12 +146,11 @@ body{
         height: 65px;
         border-radius: 50%;
         position: absolute;
-        left: calc(25% - 50px);
+        right: 4%;
         top: calc(92% - 50px);
-    }
-    #start:hover{
         cursor: pointer;
     }
+
     #textInput{
         width: 80%;
         height: 25vh;
