@@ -65,6 +65,7 @@ body{
         margin-left: calc(20% - 10%);
         margin-right: calc(20% - 10%);
         padding: 20px;
+        resize: none;
     }
 
     #textOutput{
@@ -79,6 +80,7 @@ body{
         margin-left: calc(20% - 10%);
         margin-top: 20px;
         padding: 20px;
+        resize: none;
     }
 
     #status{
@@ -95,6 +97,7 @@ body{
         font-size: larger;
         font-family: 'Arial Narrow Bold', sans-serif;
         padding: 10px;
+        resize: none;
     }
 }
 
