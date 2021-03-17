@@ -66,6 +66,7 @@ body{
         margin-right: calc(20% - 10%);
         padding: 20px;
         resize: none;
+        
     }
 
     #textOutput{
